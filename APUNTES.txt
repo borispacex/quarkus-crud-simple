@@ -1,0 +1,30 @@
+1. Docker con postgres
+user: postgres
+pass: postgres
+
+2. Abrir consola
+docker exec -it postgres-db bash
+psql -U postgres
+
+-- mostrar bases de datos
+\l
+-- mostrar tablas
+\dt
+-- mostrar valores de tabla
+\d <name-tabla>
+
+3. Creamos la base de datos
+CREATE DATABASE dbproducts;
+-- ingresar a la base de datos
+-- USE dbproducts;
+\c dbproducts
+-- crear la tabla
+CREATE TABLE products (
+   id serial PRIMARY KEY,
+   name varchar(50),
+   stock integer,
+   price decimal(10,2)
+);
+
+4. salir de la base de datos
+\q
